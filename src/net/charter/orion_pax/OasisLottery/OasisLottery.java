@@ -115,6 +115,7 @@ public class OasisLottery extends JavaPlugin implements Listener{
 						balance = balance + Double.parseDouble(args[0]);
 						this.getConfig().set("balance", balance);
 						this.saveConfig();
+						sender.sendMessage(ChatColor.GOLD + args[0] + "has been withdrawn from your iConomy balance and you have joined the lottery!");
 						return true;
 					} else {
 						sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&aDont have enough money!"));
@@ -160,6 +161,7 @@ public class OasisLottery extends JavaPlugin implements Listener{
 				this.getConfig().set("balance", balance);
 				this.saveConfig();
 				return true;
+				sender.sendMessage(ChatColor.GOLD + args[0] + "has been added to the jackpot";
 			} catch(NumberFormatException e) { 
 				sender.sendMessage(ChatColor.GOLD + args[0] + " is not an integer!");
 				return true;
@@ -172,6 +174,7 @@ public class OasisLottery extends JavaPlugin implements Listener{
 				this.getConfig().set("balance", balance);
 				this.saveConfig();
 				return true;
+				sender.sendMessage(ChatColor.GOLD + args[0] + "has been substracted from the jackpot";
 			} catch(NumberFormatException e) { 
 				sender.sendMessage(ChatColor.GOLD + args[0] + " is not an integer!");
 				return true;
@@ -221,6 +224,8 @@ public class OasisLottery extends JavaPlugin implements Listener{
 			this.getConfig().set("hasdoubled", hasDoubled);
 			this.saveConfig();
 			this.reloadConfig();
+			sender.sendMessage(ChatColor.GOLD + "The Lottery has been reset!");
+			
 		}
 	}
 	
